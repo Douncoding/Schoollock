@@ -1,0 +1,55 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    androidBuildToolsVersion = "24.0.0"
+    androidMinSdkVersion = 19
+    androidTargetSdkVersion = 24
+    androidCompileSdkVersion = 24
+    androidApplicationId = "com.douncoding.pointman"
+
+    daggerVersion = '2.7'
+    rxJavaVersion = '1.1.10'
+    rxAndroidVersion = '1.2.1'
+    javaxAnnotationVersion = '1.0'
+    javaxInjectVersion = '1'
+    gsonVersion = '2.7'
+    okHttpVersion = '2.5.0'
+    retrofitVersion = '2.1.0'
+    kakaoSdkVersion = '1.1.7'
+    facebookVersion = '4.14.1'
+
+    robolectricVersion = '3.1.2'
+    jUnitVersion = '4.12'
+    mockitoVersion = '1.9.5'
+    assertJVersion = '1.7.1'
+    espressoVersion = '2.0'
+    dexmakerVersion = '1.0'
+
+    dependencies = [
+            daggerCompiler:     "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger:             "com.google.dagger:dagger:${daggerVersion}",
+            javaAnnotation:     "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaInject:         "javax.inject:javax.inject:${javaxInjectVersion}",
+            rxJava:             "io.reactivex:rxjava:${rxJavaVersion}",
+            rxAndroid:          "io.reactivex:rxandroid:${rxAndroidVersion}",
+            gson:               "com.google.code.gson:gson:${gsonVersion}",
+            okHttp:             "com.squareup.okhttp:okhttp:${okHttpVersion}",
+            retrofit:           "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitRxJava:     "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}",
+            retrofitConvert:    "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+    ]
+
+    testDependencies = [
+            junit:              "junit:junit:${jUnitVersion}",
+            mockito:            "org.mockito:mockito-core:${mockitoVersion}",
+            assertj:            "org.assertj:assertj-core:${assertJVersion}",
+            robolectric:        "org.robolectric:robolectric:${robolectricVersion}",
+            dexmaker:           "com.google.dexmaker:dexmaker:${dexmakerVersion}",
+            dexmakerMockito:    "com.google.dexmaker:dexmaker-mockito:${dexmakerVersion}",
+            espresso:           "com.android.support.test.espresso:espresso-core:${espressoVersion}",
+    ]
+}
