@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">Schoollock</string>
+    <string name="app_name">SCHOOLLOCK</string>
+    <string name="app_name_space">S C H O O L L O C K</string>
+
+    <string name="intro_signin_button">회원가입</string>
+    <string name="intro_login_button">로그인</string>
+
+    <string name="nav_drawer_open">Open navigation drawer</string>
+    <string name="nav_drawer_close">Close navigation drawer</string>
+    
+    <string name="home_search_attendance_label">출결조회</string>
+    <string name="home_notice_label">공지사항</string>
+    <string name="home_position_adjust_label">위치조정</string>
+    <string name="home_question_and_vote_label">질문/투표</string>
+    <string name="home_record_label">녹음/녹화</string>
+
+    <string name="attendance_message">출석</string>
+    <string name="absent_message">결석</string>
+    <string name="late_message">지각</string>
 </resources>

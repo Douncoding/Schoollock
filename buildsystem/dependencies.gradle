@@ -9,7 +9,7 @@ ext {
     androidMinSdkVersion = 19
     androidTargetSdkVersion = 24
     androidCompileSdkVersion = 24
-    androidApplicationId = "com.douncoding.pointman"
+    androidApplicationId = "com.douncoding.schoollock"
 
     daggerVersion = '2.7'
     rxJavaVersion = '1.1.10'

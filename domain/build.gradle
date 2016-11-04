@@ -1,7 +1,23 @@
 apply plugin: 'java'
 
+configurations {
+    provided
+}
+
+sourceSets {
+    main {
+        compileClasspath += configurations.provided
+    }
+}
+
+def domainDependencies = rootProject.ext.dependencies;
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    provided domainDependencies.daggerCompiler
+    compile domainDependencies.dagger
+    compile domainDependencies.rxJava
+    compile domainDependencies.gson
 }
 
 sourceCompatibility = "1.7"

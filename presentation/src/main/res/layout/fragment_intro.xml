@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/view_base_background"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="30dp" android:paddingBottom="30dp"
+        android:paddingStart="16dp" android:paddingEnd="16dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_only"
+            android:layout_centerHorizontal="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:hint="등록된 이메일을 입력하세요"
+                    android:textSize="14sp"
+                    android:padding="15dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:background="@drawable/bg_edittext_rounded_primary"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:hint="패스워드를 입력하세요"
+                    android:textSize="14sp"
+                    android:padding="15dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:background="@drawable/bg_edittext_rounded_primary"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                xmlns:fancy="http://schemas.android.com/apk/res-auto">
+                <mehdi.sakout.fancybuttons.FancyButton
+                    android:id="@+id/signin_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    fancy:fb_defaultColor="@color/colorAccent"
+                    fancy:fb_focusColor="@color/white"
+                    fancy:fb_radius="40dp"
+                    fancy:fb_text="@string/intro_signin_button"
+                    fancy:fb_textColor="@color/colorTextPrimary"/>
+
+                <android.support.v4.widget.Space
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content" />
+
+                <mehdi.sakout.fancybuttons.FancyButton
+                    android:id="@+id/login_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    fancy:fb_defaultColor="@color/colorPrimary"
+                    fancy:fb_focusColor="@color/white"
+                    fancy:fb_radius="40dp"
+                    fancy:fb_text="@string/intro_login_button"
+                    fancy:fb_textColor="@color/colorTextPrimary"/>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
