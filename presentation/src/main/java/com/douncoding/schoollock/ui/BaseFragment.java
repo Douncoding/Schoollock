@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
 import com.douncoding.schoollock.internal.di.HasComponent;
 
 /**
@@ -24,15 +26,11 @@ public abstract class BaseFragment extends Fragment {
     protected abstract void initData();
     protected abstract void initArguments(Bundle bundle);
 
-//    protected T onListener;
     protected interface OnBaseListener {}
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-//        if (context instanceof OnBaseListener) {
-//            this.onListener = (T)context;
-//        }
     }
 
     @Nullable
@@ -60,5 +58,9 @@ public abstract class BaseFragment extends Fragment {
     @SuppressWarnings("unchecked")
     protected <C> C getComponent(Class<C> componentType) {
         return componentType.cast(((HasComponent<C>)getActivity()).getComponent());
+    }
+
+    protected void showToastMessage(String message) {
+        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }
 }

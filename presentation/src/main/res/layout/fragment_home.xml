@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    android:layout_height="match_parent">
 
     <!-- 상단 기능 모음 -->
     <LinearLayout
@@ -13,14 +12,14 @@
         android:orientation="horizontal"
         android:layout_marginTop="5dp">
         <LinearLayout
-            android:id="@+id/attended_search_panel"
+            android:id="@+id/rollbook_panel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center"
             android:padding="10dp"
-            android:background="#80F8CF25">
+            android:background="@color/colorYellowTransparent">
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -41,7 +40,7 @@
             android:orientation="vertical"
             android:gravity="center"
             android:padding="10dp"
-            android:background="#802BBDD4">
+            android:background="@color/colorBlueTransparent">
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -63,7 +62,7 @@
             android:orientation="vertical"
             android:gravity="center"
             android:padding="10dp"
-            android:background="#80AAd036">
+            android:background="@color/colorGreenTransparent">
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -84,7 +83,9 @@
         android:orientation="vertical"
         android:background="#80FFFFFF"
         android:gravity="center"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -100,18 +101,19 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/question_answer_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:background="#80EF4458"
+        android:background="@color/colorRedTransparent"
         android:padding="10dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp">
         <ImageView
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:src="@drawable/ic_question_answer"/>
+            android:src="@drawable/ic_question_person"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -121,6 +123,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/record_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

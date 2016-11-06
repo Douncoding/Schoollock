@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="50dp"
+    android:paddingBottom="50dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#80ef4458"
+        android:gravity="center"
+        android:padding="16dp">
+        <TextView
+            android:id="@+id/vote_title_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="@string/vote_title_label"/>
+        <TextView
+            android:id="@+id/vote_content_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:text="1차 진도 이해도 투표"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+        <LinearLayout
+            android:id="@+id/vote_yes_panel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#803a5693"
+            android:padding="16dp"
+            android:gravity="center"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_yellow_yes"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/vote_no_panel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#80FFFFFF"
+            android:padding="16dp"
+            android:gravity="center"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_green_no"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/do_question_panel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#80fdd225"
+            android:padding="16dp"
+            android:gravity="center"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_question_person"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/white"
+                android:text="@string/question_action_button_label"/>
+        </LinearLayout>
+
+        <!--질문 리스트 버튼-->
+        <LinearLayout
+            android:id="@+id/question_list_panel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/colorGreenTransparent"
+            android:padding="16dp"
+            android:gravity="center"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_question_persons"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/question_search_button_label"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

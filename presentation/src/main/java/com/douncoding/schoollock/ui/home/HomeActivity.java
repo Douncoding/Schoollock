@@ -9,14 +9,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
+import com.douncoding.schoollock.Navigator;
 import com.douncoding.schoollock.R;
 import com.douncoding.schoollock.internal.di.HasComponent;
 import com.douncoding.schoollock.ui.BaseActivity;
 import com.douncoding.schoollock.ui.BaseContractPresenter;
-import com.douncoding.schoollock.ui.rollbook.RollbookActivity;
 
 import javax.inject.Inject;
 
@@ -27,7 +27,7 @@ import butterknife.ButterKnife;
  * 홈 화면
  */
 public class HomeActivity extends BaseActivity implements HasComponent<HomeComponent>,
-        NavigationView.OnNavigationItemSelectedListener {
+        NavigationView.OnNavigationItemSelectedListener, HomeContentFragment.OnFragmentListener {
     public static Intent getCallingIntent(Context context) {
         Intent intent = new Intent(context, HomeActivity.class);
         return intent;
@@ -36,14 +36,16 @@ public class HomeActivity extends BaseActivity implements HasComponent<HomeCompo
     @BindView(R.id.toolbar) Toolbar mToolbar;
     @BindView(R.id.drawer_layout) DrawerLayout mDrawerLayout;
     @BindView(R.id.nav_view) NavigationView mNavigationView;
-    @BindView(R.id.notice_panel) ViewGroup mNoticePanel;
+    @BindView(R.id.fragment_container) FrameLayout mFragmentContainer;
 
     @Inject HomePresenter presenter;
+    @Inject Navigator navigator;
+
     private HomeComponent mHomeComponent;
 
     @Override
     public int getContentViewId() {
-        return R.layout.activity_home_nav_and_appbar;
+        return R.layout.activity_nav_and_appbar;
     }
 
     @Override
@@ -57,18 +59,17 @@ public class HomeActivity extends BaseActivity implements HasComponent<HomeCompo
         this.setupToolbar();
         this.setupDrawerNavigation();
 
-
-        mNoticePanel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, RollbookActivity.class));
-            }
-        });
+        addFragment(R.id.fragment_container, HomeContentFragment.newInstance(), null);
     }
 
     @Override
     public void initInjector() {
-
+        mHomeComponent = DaggerHomeComponent.builder()
+                .applicationComponent(getApplicationComponent())
+                .activityModule(getActivityModule())
+                .homeModule(new HomeModule())
+                .build();
+        mHomeComponent.inject(this);
     }
 
     @Override
@@ -84,6 +85,31 @@ public class HomeActivity extends BaseActivity implements HasComponent<HomeCompo
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return false;
+    }
+
+    @Override
+    public void onRollbookClicked() {
+        navigator.navigateToRollbook(this);
+    }
+
+    @Override
+    public void onNoticeClicked() {
+        navigator.navigateToNotice(this);
+    }
+
+    @Override
+    public void onLocationClicked() {
+        navigator.navigateToBluetooth(this);
+    }
+
+    @Override
+    public void onQuestionClicked() {
+        navigator.navigateToQuestionVote(this);
+    }
+
+    @Override
+    public void onRecordClicked() {
+        navigator.navigateToRecord(this);
     }
 
     private void setupToolbar() {

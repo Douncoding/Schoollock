@@ -1,11 +1,16 @@
 package com.douncoding.schoollock.ui.intro;
 
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewCompat;
 
 import com.douncoding.schoollock.R;
 import com.douncoding.schoollock.internal.di.HasComponent;
 import com.douncoding.schoollock.ui.BaseActivity;
 import com.douncoding.schoollock.ui.BaseContractPresenter;
+import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import javax.inject.Inject;
 

@@ -6,77 +6,74 @@
     android:paddingStart="16dp"
     android:paddingEnd="16dp">
 
+    <!-- 과목별 공지사항 -->
     <LinearLayout
+        android:id="@+id/notice_per_course_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#3a5693"
+        android:background="@color/colorBlueTransparent"
         android:padding="16dp"
         android:gravity="center">
-
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/ic_wordpad" />
-
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_notice_per_class" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:textColor="@color/white"
-            android:text="메모장"
-            android:layout_marginTop="5dp"/>
+            android:text="과목별 공지사항"/>
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
+        <!-- 시간표 -->
         <LinearLayout
+            android:id="@+id/timetable_panel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#F02bbdd4"
+            android:background="@color/colorRedTransparent"
             android:padding="16dp"
             android:gravity="center"
             android:layout_weight="1">
-
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/ic_record"
-                android:id="@+id/imageView2" />
-
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_timetable"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="녹음"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/white"
-                android:layout_marginTop="5dp"/>
+                android:text="시간표"/>
         </LinearLayout>
 
+        <!-- 달력 -->
         <LinearLayout
+            android:id="@+id/calendar_panel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#1293da"
+            android:background="#80FFFFFF"
             android:padding="16dp"
             android:gravity="center"
             android:layout_weight="1">
-
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/ic_camera"
-                android:id="@+id/imageView3"
-                />
-
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_calendar_only_line"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="촬영"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/white"
-                android:layout_marginTop="5dp"/>
+                android:text="달력"/>
         </LinearLayout>
     </LinearLayout>
 

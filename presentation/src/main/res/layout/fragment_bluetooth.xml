@@ -22,10 +22,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
             android:textColor="@color/white"
-            android:text="  bluetooth 재실행
-     APP Test"
-            android:layout_marginTop="5dp"/>
+            android:text="bluetooth 재실행\nAPP Test"/>
     </LinearLayout>
 
 

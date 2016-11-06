@@ -2,7 +2,6 @@ package com.douncoding.schoollock;
 
 import android.app.Application;
 
-import com.beardedhen.androidbootstrap.TypefaceProvider;
 import com.douncoding.schoollock.internal.di.ApplicationComponent;
 import com.douncoding.schoollock.internal.di.ApplicationModule;
 import com.douncoding.schoollock.internal.di.DaggerApplicationComponent;
@@ -32,7 +31,7 @@ public class AndroidApplication extends Application {
     }
 
     private void initDesignConfiguration() {
-        TypefaceProvider.registerDefaultIconSets();
+
     }
 
     public ApplicationComponent getApplicationComponent() {

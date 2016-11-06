@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.douncoding.schoollock"
-    android:versionCode="89"
-    android:versionName="0.0.0.89">
+    android:versionCode="221"
+    android:versionName="0.0.0.221">
 
     <application
         android:allowBackup="true"
@@ -24,6 +24,18 @@
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity android:name=".ui.rollbook.RollbookActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".ui.notice.NoticeActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".ui.bluetooth.BluetoothActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".ui.question.QuestionVoteActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".ui.record.RecordActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 

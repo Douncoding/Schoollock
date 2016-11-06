@@ -6,24 +6,24 @@
     android:paddingStart="16dp"
     android:paddingEnd="16dp">
 
+    <!-- 메모장 -->
     <LinearLayout
+        android:id="@+id/memo_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#F02bbdd4"
+        android:background="#803a5693"
         android:padding="16dp"
         android:gravity="center">
-
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/ic_notice_per_class" />
-
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_wordpad" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:text="과목별 공지사항"
+            android:text="메모장"
             android:layout_marginTop="5dp"/>
     </LinearLayout>
 
@@ -32,51 +32,48 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <!-- 녹음 -->
         <LinearLayout
+            android:id="@+id/voice_record_panel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#80EF4458"
+            android:background="@color/colorBlueTransparent"
             android:padding="16dp"
             android:gravity="center"
             android:layout_weight="1">
-
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/ic_timetable"
-                android:id="@+id/imageView2" />
-
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_mic"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="시간표"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/white"
-                android:layout_marginTop="5dp"/>
+                android:text="녹음"/>
         </LinearLayout>
 
+        <!-- 녹화 -->
         <LinearLayout
+            android:id="@+id/camera_record_panel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#80FFFFFF"
+            android:background="#801293da"
             android:padding="16dp"
             android:gravity="center"
             android:layout_weight="1">
-
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/ic_calendar_only_line"
-                android:id="@+id/imageView3"
-                />
-
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_photo_camera"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="달력"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/white"
-                android:layout_marginTop="5dp"/>
+                android:text="촬영"/>
         </LinearLayout>
     </LinearLayout>
 

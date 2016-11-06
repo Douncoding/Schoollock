@@ -1,5 +1,7 @@
 package com.douncoding.schoollock.internal.di;
 
+import android.content.Context;
+
 import com.douncoding.schoollock.AndroidApplication;
 
 import javax.inject.Singleton;
@@ -14,4 +16,6 @@ import dagger.Component;
 @Component(modules = ApplicationModule.class)
 public interface ApplicationComponent {
     void inject(AndroidApplication androidApplication);
+
+    Context context();
 }

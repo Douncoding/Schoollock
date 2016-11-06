@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_container"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/date_txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/state_txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"/>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/enroll_btn"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            fancy:fb_defaultColor="@color/white"
+            fancy:fb_focusColor="@color/colorPrimary"
+            fancy:fb_borderColor="@color/colorPrimary"
+            fancy:fb_borderWidth="1dp"
+            fancy:fb_radius="10dp"
+            fancy:fb_textSize="12sp"
+            fancy:fb_textColor="@android:color/secondary_text_light"
+            fancy:fb_text="신청"/>
+    </RelativeLayout>
+</LinearLayout>

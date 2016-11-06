@@ -2,16 +2,27 @@ package com.douncoding.schoollock.ui;
 
 
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.douncoding.schoollock.AndroidApplication;
+import com.douncoding.schoollock.R;
 import com.douncoding.schoollock.internal.di.ActivityModule;
 import com.douncoding.schoollock.internal.di.ApplicationComponent;
+import com.orhanobut.logger.Logger;
+import com.readystatesoftware.systembartint.SystemBarTintManager;
+
+import java.util.List;
 
 public abstract class BaseActivity extends AppCompatActivity implements BaseContractView {
     // Content Layout Resource
@@ -27,6 +38,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseCont
         super.onCreate(savedInstanceState);
         setContentView(getContentViewId());
 
+//        this.setSystemBarTintable();
         this.initState(savedInstanceState);
         this.initInjector();
         this.initUiAndListener();
@@ -62,6 +74,22 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseCont
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
     }
 
+    /**
+     * 아직 잘않되는 상태... 머가 문제일가.
+     */
+    private void setSystemBarTintable() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            // create our manager instance after the content view is set
+            SystemBarTintManager tintManager = new SystemBarTintManager(this);
+            // enable status bar tint
+            tintManager.setStatusBarTintEnabled(true);
+            // enable navigation bar tint
+            tintManager.setNavigationBarTintEnabled(true);
+            // set the transparent color of the status bar, 20% darker
+            tintManager.setTintColor(ContextCompat.getColor(this, R.color.colorWhiteTransparent));
+        }
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -90,12 +118,62 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseCont
         return this;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            this.onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
+            finish();
+        }
+    }
+
     public <T extends BaseFragment> void addFragment(@IdRes int containerViewId, T fragment, @Nullable String tag) {
+        FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
+        if (getCurrentFragment() != null) {
+            transaction.hide(getCurrentFragment());
+        }
+
+        if (getSupportFragmentManager().findFragmentByTag(tag) == null) {
+            transaction.add(containerViewId, fragment, tag);
+            transaction.addToBackStack(null);
+            transaction.commit();
+            // 완료까지 지연
+            getSupportFragmentManager().executePendingTransactions();
+        }
+    }
+
+    public <T extends BaseFragment> void replaceFragment(@IdRes int containerViewId, T fragment, @Nullable String tag) {
         if (getSupportFragmentManager().findFragmentByTag(tag) == null) {
             FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
-            transaction.add(containerViewId, fragment, tag);
+            transaction.replace(containerViewId, fragment, tag);
             transaction.commit();
+            // 완료까지 지연
+            getSupportFragmentManager().executePendingTransactions();
         }
+    }
+
+    public BaseFragment getFragmentByTag(String tag) {
+        return (BaseFragment)this.getSupportFragmentManager().findFragmentByTag(tag);
+    }
+
+    public BaseFragment getCurrentFragment() {
+        List<Fragment> fragments = getSupportFragmentManager().getFragments();
+        if(fragments != null){
+            for(Fragment fragment : fragments){
+                if(fragment != null && fragment.isVisible())
+                    return (BaseFragment)fragment;
+            }
+        }
+
+        return null;
     }
 
     public ActivityModule getActivityModule() {
@@ -106,4 +184,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseCont
         return ((AndroidApplication)getApplication()).getApplicationComponent();
     }
 
+    public void showToastMessage(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
 }

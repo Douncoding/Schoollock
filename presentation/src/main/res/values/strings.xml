@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">SCHOOLLOCK</string>
     <string name="app_name_space">S C H O O L L O C K</string>
+    <string name="app_rollbook_name">출결조회</string>
+    <string name="app_notice_name">공지사항</string>
+    <string name="app_question_vote_name">질문/투표</string>
+    <string name="app_record_name">녹음/촬영</string>
+    <string name="app_bluetooth_name">위치조정</string>
 
     <string name="intro_signin_button">회원가입</string>
     <string name="intro_login_button">로그인</string>
@@ -13,6 +18,10 @@
     <string name="home_position_adjust_label">위치조정</string>
     <string name="home_question_and_vote_label">질문/투표</string>
     <string name="home_record_label">녹음/녹화</string>
+
+    <string name="vote_title_label">투표 주제</string>
+    <string name="question_action_button_label">질문 하기</string>
+    <string name="question_search_button_label">질문 리스트</string>
 
     <string name="attendance_message">출석</string>
     <string name="absent_message">결석</string>
