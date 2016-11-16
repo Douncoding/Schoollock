@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.intro.IntroActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="30dp" android:paddingBottom="30dp"
+        android:paddingStart="16dp" android:paddingEnd="16dp">
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/signin_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            app:fb_defaultColor="@color/colorPrimary"
+            app:fb_focusColor="@color/white"
+            app:fb_radius="40dp"
+            app:fb_text="시작하기"
+            app:fb_textColor="@color/white"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_above="@id/signin_btn"
+            android:layout_marginBottom="30dp"
+            android:textColor="@color/white"
+            android:text="구글계정과 연동하여 풍부한 스쿨락 서비스를 통해\n학업일정을 효율적으로 관리해 보세요."/>
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_centerHorizontal="true">-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical">-->
+                <!--<EditText-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:inputType="textEmailAddress"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:layout_marginBottom="5dp"-->
+                    <!--android:gravity="center"-->
+                    <!--android:hint="등록된 이메일을 입력하세요"-->
+                    <!--android:textSize="14sp"-->
+                    <!--android:padding="15dp"-->
+                    <!--android:paddingStart="20dp"-->
+                    <!--android:paddingEnd="20dp"-->
+                    <!--android:background="@drawable/bg_edittext_rounded_primary"/>-->
+
+                <!--<EditText-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:inputType="textPassword"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:layout_marginBottom="5dp"-->
+                    <!--android:gravity="center"-->
+                    <!--android:hint="패스워드를 입력하세요"-->
+                    <!--android:textSize="14sp"-->
+                    <!--android:padding="15dp"-->
+                    <!--android:paddingStart="20dp"-->
+                    <!--android:paddingEnd="20dp"-->
+                    <!--android:background="@drawable/bg_edittext_rounded_primary"/>-->
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal"-->
+                <!--xmlns:fancy="http://schemas.android.com/apk/res-auto">-->
+                <!--<mehdi.sakout.fancybuttons.FancyButton-->
+                    <!--android:id="@+id/signin_btn"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="50dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:layout_marginBottom="5dp"-->
+                    <!--fancy:fb_defaultColor="@color/colorAccent"-->
+                    <!--fancy:fb_focusColor="@color/white"-->
+                    <!--fancy:fb_radius="40dp"-->
+                    <!--fancy:fb_text="@string/intro_signin_button"-->
+                    <!--fancy:fb_textColor="@color/colorTextPrimary"/>-->
+
+                <!--<android.support.v4.widget.Space-->
+                    <!--android:layout_width="20dp"-->
+                    <!--android:layout_height="wrap_content" />-->
+
+                <!--<mehdi.sakout.fancybuttons.FancyButton-->
+                    <!--android:id="@+id/login_btn"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="50dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:layout_marginBottom="5dp"-->
+                    <!--fancy:fb_defaultColor="@color/colorPrimary"-->
+                    <!--fancy:fb_focusColor="@color/white"-->
+                    <!--fancy:fb_radius="40dp"-->
+                    <!--fancy:fb_text="@string/intro_login_button"-->
+                    <!--fancy:fb_textColor="@color/colorTextPrimary"/>-->
+            <!--</LinearLayout>-->
+        <!--</LinearLayout>-->
+    </RelativeLayout>
+</RelativeLayout>

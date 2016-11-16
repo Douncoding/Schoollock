@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "228038310498",
+    "firebase_url": "https://schoollock-9e218.firebaseio.com",
+    "project_id": "schoollock-9e218",
+    "storage_bucket": "schoollock-9e218.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228038310498:android:e99495e0fbc59847",
+        "android_client_info": {
+          "package_name": "com.douncoding.schoollock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "228038310498-2mf8d1fg3m48ud486i9hmfud2usmmkdg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.douncoding.schoollock",
+            "certificate_hash": "E3D7485C701E47B5199284D37B6182BEA7EFECC8"
+          }
+        },
+        {
+          "client_id": "228038310498-ln8ja3tndg9jkin88668v3oh1jllt0jk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6-LP_-owOeM0SUAOZkyfsEVTgGn3MZ20"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "228038310498-ln8ja3tndg9jkin88668v3oh1jllt0jk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
